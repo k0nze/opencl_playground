@@ -1,10 +1,10 @@
 all: list_devices list_platforms
 
 list_platforms: list_platforms.c
-	clang -framework OpenCL -Wno-deprecated-declarations list_platforms.c -o list_platforms
+	gcc list_platforms.c -o list_platforms -lOpenCL
 
 list_devices: list_devices.c
-	clang -framework OpenCL -Wno-deprecated-declarations list_devices.c -o list_devices
+	gcc list_devices.c -o list_devices -lOpenCL
 
 .PHONY clean:
 	-rm list_platforms
